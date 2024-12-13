@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Meeting Genius",
+  "version": "1.0.0",
+  "description": "AI-powered meeting assistant",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
